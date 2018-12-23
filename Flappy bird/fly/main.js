@@ -54,8 +54,12 @@ export default class Main {
      //1.将需要绘制的资源的实例 put到DataStore,这里传入的类Background 在js中 typeof 类==function
     this.DataStore.put('background',Background)
                   .put('land',Land)
+                   //因为铅笔是成对出现的 这里采用数据的形式
+                   // .put('pencils',[])
+                   .put('pencils', [])
 
     this.Director.run();
+    this.Director.createPencil();
   }
 
 }

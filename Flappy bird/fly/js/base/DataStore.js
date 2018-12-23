@@ -17,6 +17,7 @@ export class DataStore{
     if(typeof value =="function"){
       value=new value()
     }
+  
     this.map.set(key,value);
     // console.log("当前的DataStore")
     // console.log(this.map);
