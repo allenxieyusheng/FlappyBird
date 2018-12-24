@@ -10,7 +10,7 @@ export class Pencil extends Sprite {
           0,0,
           image.width,image.height,
           //放在canvas的最右侧，
-          50,0,
+          DataStore.getInstance().canvas.width,0,
           image.width,image.height
         );
         //图形在canvs距离头部的位置，上铅笔是负值 下铅笔是正值

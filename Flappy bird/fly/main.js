@@ -57,9 +57,10 @@ export default class Main {
                    //因为铅笔是成对出现的 这里采用数据的形式
                    // .put('pencils',[])
                    .put('pencils', [])
-
-    this.Director.run();
+    //这里注意一下哈 需要先创建铅笔才去run 否则会出现空数组 但是里面有数据的情况
     this.Director.createPencil();
+    this.Director.run();
+
   }
 
 }
