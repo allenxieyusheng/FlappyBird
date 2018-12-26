@@ -50,6 +50,10 @@ export default class Main {
     this.init()
   }
   init(){
+
+    //初始化游戏是没有结束的，挂在在direct
+    this.Director.isGameOver = false
+
     // console.log("开始绘制");
      //1.将需要绘制的资源的实例 put到DataStore,这里传入的类Background 在js中 typeof 类==function
     this.DataStore.put('background',Background)

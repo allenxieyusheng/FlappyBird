@@ -54,7 +54,6 @@ export class Sprite {
          y = this.y,
          width = this.width,
          height = this.height) {
-           console.log("绘制吧");
         this.ctx.drawImage(
             img,
             srcX,
