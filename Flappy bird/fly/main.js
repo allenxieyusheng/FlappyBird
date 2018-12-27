@@ -5,6 +5,8 @@ import {Director}  from './Director.js'
 import {Background} from "./js/runtime/Background.js"
 import {Land} from './js/runtime/Land.js'
 
+import {Birds} from "./js/player/Birds.js";
+
 export default class Main {
   //初始化
   constructor(){
@@ -61,6 +63,7 @@ export default class Main {
                    //因为铅笔是成对出现的 这里采用数据的形式
                    // .put('pencils',[])
                    .put('pencils', [])
+                   .put('birds', Birds)
     //这里注意一下哈 需要先创建铅笔才去run 否则会出现空数组 但是里面有数据的情况
     this.Director.createPencil();
     this.Director.run();

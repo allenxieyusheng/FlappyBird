@@ -39,7 +39,7 @@ export class  Director{
      
         const pencils = this.dataStore.get('pencils');
 
-
+        this.dataStore.get('birds').draw(); 
     /*
     因为屏幕中只会存在四个元素 ，所以当需要销毁两个，然后按照第一组元素来创造
     当屏幕中有4个（2组）铅笔 而且数组的第一个铅笔的消失在屏幕左边，就弹出第一组（前两个铅笔）
