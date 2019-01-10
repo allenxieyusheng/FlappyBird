@@ -63,7 +63,7 @@ export class Birds extends Sprite {
             this.clippingWidth[this.index], this.clippingHeight[this.index],
             this.birdsX[this.index], this.birdsY[this.index],
             this.birdsWidth[this.index], this.birdsHeight[this.index]
-        );
+        );  
     }
 
 

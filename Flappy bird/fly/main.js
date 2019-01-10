@@ -52,7 +52,8 @@ export default class Main {
     this.init()
   }
   init(){
-
+    //注册点击事件
+    this.registerEvent();
     //初始化游戏是没有结束的，挂在在direct
     this.Director.isGameOver = false
 
@@ -69,5 +70,21 @@ export default class Main {
     this.Director.run();
 
   }
+
+  registerEvent(){
+    //这里this的指向是main类 不用尖头函数是canvas对象
+    this.canvas.addEventListener('touchstart', e => {
+        //屏蔽掉JS的事件冒泡
+        e.preventDefault();
+        console.log("点击屏幕了");
+        if (this.Director.isGameOver) {
+            console.log('游戏开始');
+            this.init();
+        } else {
+            this.Director.birdsEvent();
+        }
+    });
+  }
+
 
 }

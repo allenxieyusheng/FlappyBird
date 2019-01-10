@@ -15,7 +15,14 @@ export class  Director{
     }
     return Director.instance
   }
-
+  //点击屏幕 小鸟的事件
+  birdsEvent() {
+      for (let i = 0; i <= 2; i++) {
+          this.dataStore.get('birds').y[i] =
+              this.dataStore.get('birds').birdsY[i];
+      }
+      this.dataStore.get('birds').time = 0;
+  }
   //创建成对的铅笔
   createPencil(){
     //设定最高最低
@@ -28,7 +35,7 @@ export class  Director{
   }
   //开始游戏
   run(){
-    
+
      if(!this.isGameOver){
         //游戏在运行
         const background = this.dataStore.get('background')
@@ -36,10 +43,10 @@ export class  Director{
         // background.say()
         //return 回来的new 通过Sprite里面的draw绘制出来
         background.draw();
-     
+
         const pencils = this.dataStore.get('pencils');
 
-        this.dataStore.get('birds').draw(); 
+        this.dataStore.get('birds').draw();
     /*
     因为屏幕中只会存在四个元素 ，所以当需要销毁两个，然后按照第一组元素来创造
     当屏幕中有4个（2组）铅笔 而且数组的第一个铅笔的消失在屏幕左边，就弹出第一组（前两个铅笔）
@@ -58,14 +65,14 @@ export class  Director{
                 pencils.length === 2) {
                 console.log("连续创造")
                 this.createPencil();
-    } 
+    }
     pencils.forEach(function (value) {
         console.log("x");
         console.log(value);
         value.draw();
     });
     land.draw();
-    this.timer = requestAnimationFrame(()=>this.run())
+    // this.timer = requestAnimationFrame(()=>this.run())
      }else{
         cancleAnimationFrame(this.timer)
      }
