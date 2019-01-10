@@ -1,4 +1,4 @@
-//导演类 全局的游戏控制
+//导演类 全局的游戏控制，也指允许一个导演掌控全局
 
 import {DataStore}  from './js/base/DataStore.js'
 
@@ -9,6 +9,7 @@ export class  Director{
   constructor() {
     this.dataStore = DataStore.getInstance();
   }
+  
   static getInstance(){
     if(!Director.instance){
       Director.instance = new Director()

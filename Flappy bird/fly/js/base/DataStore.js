@@ -1,10 +1,12 @@
+
+//全局数据  上下文，绘制图形资源对象，速度等，因此其类只允许一个实例对象，即单例
 export class DataStore{
   constructor(){
     this.map =new Map()
   }
   //资源单例
   static getInstance(){
-    //挂载在类的原型链上
+    //单实例挂载在类的原型链上！
     if(!DataStore.instance){
       DataStore.instance = new DataStore();
     }
@@ -17,7 +19,7 @@ export class DataStore{
     if(typeof value =="function"){
       value=new value()
     }
-  
+
     this.map.set(key,value);
     // console.log("当前的DataStore")
     // console.log(this.map);

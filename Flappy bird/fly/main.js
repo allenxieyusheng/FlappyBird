@@ -40,9 +40,9 @@ export default class Main {
   //初次的加载
   firstInit(map){
     console.log("初次的加载，返回map形式的key-value（new Image）的资源");
+  //全局资源挂在资源库上
     //1。将ctx附属在DataStore里面
     this.DataStore.ctx = this.ctx
-
     //2. 将加载完成的资源 附属
     this.DataStore.res=map
     //将canvas附属，其他地方需要canvas的高宽
@@ -56,7 +56,6 @@ export default class Main {
     this.registerEvent();
     //初始化游戏是没有结束的，挂在在direct
     this.Director.isGameOver = false
-
     // console.log("开始绘制");
      //1.将需要绘制的资源的实例 put到DataStore,这里传入的类Background 在js中 typeof 类==function
     this.DataStore.put('background',Background)
@@ -68,7 +67,6 @@ export default class Main {
     //这里注意一下哈 需要先创建铅笔才去run 否则会出现空数组 但是里面有数据的情况
     this.Director.createPencil();
     this.Director.run();
-
   }
 
   registerEvent(){
